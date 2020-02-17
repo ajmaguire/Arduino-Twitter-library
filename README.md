@@ -1,15 +1,22 @@
 # Twitter client library for Arduino
-A library to post tweets to Twitter from Arduino with an Ethernet Shield.
+A library to post tweets to Twitter from Arduino via WiFi.
 This library uses relay server on GooleAppEngine to handle OAuth authentication:
 
 http://arduino-tweet.appspot.com/
 
 ## Example
-Some sample sketches for Arduino included(/examples/).
+Below is a simple example of how to use this library:
 
- - SimplePost : Send a tweet once Arduino is reset. (Note that duplicated tweets
-   will be rejected by Twitter.)
- - Twitter_Serial_GW : Send tweets based on the input from the Serial.
+//BEGIN EXAMPLE
+
+ char tweet[512]; // the character buffer for your tweet.
+ sprintf(tweet, "Hello world!"); // put characters in the buffer.
+ 
+ Twitter twitter("YOUR CODE"); // instantiate a Twitter object.
+ twitter.post(tweet);  // post the tweet you wrote above!
+ 
+//END EXAMPLE
+
 
 ## How to use
  + Add this library to your Arduino IDE.
