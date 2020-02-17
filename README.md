@@ -1,11 +1,11 @@
 # Twitter client library for Arduino
-A library to post tweets to Twitter from Arduino via WiFi.
+A library to post tweets to Twitter from Arduino via Ethernet and WiFi.
 This library uses relay server on GooleAppEngine to handle OAuth authentication:
 
 http://arduino-tweet.appspot.com/
 
 ## Example
-Below is a simple example of how to use this library:
+Below is a simple example of how to use the WiFi portion of the library:
 
 //BEGIN EXAMPLE
 
@@ -14,7 +14,7 @@ Below is a simple example of how to use this library:
  sprintf(tweet, "Hello world!"); // put characters in the buffer.
  
  
- Twitter twitter("YOUR CODE"); // instantiate a Twitter object.
+ TwitterWiFi twitter("YOUR CODE"); // instantiate a TwitterWiFi object.
  
  twitter.post(tweet);  // post the tweet you wrote above!
  
@@ -37,18 +37,20 @@ Below is a simple example of how to use this library:
 
 ## Reference
 ### Creation
-You need to create an instance of Twitter class like below:
+You need to create an instance of a Twitter or TwitterWiFi class like below:
 
-    Twitter twitter("YOUR-TOKEN");
+    TwitterWiFi twitter("YOUR-TOKEN"); // for WiFi.
+          or...
+    Twitter twitter("YOUR-TOKEN"); // for ethernet.
 
-You need also begin Ethernet library.
+You need also begin said library.
 
 ### Functions
 #### bool post(const char *message)
 
 Begin posting the specified message to Twitter. If connection to twitter.com is established successfully, this function returns true.
 
-If failed to connect Twitter, returns false. (Check Ethernet is correctly configured.)
+If failed to connect Twitter, returns false. (Check Ethernet/WiFi is correctly configured.)
 
 Posting is not done yet even it returns true. You should call twitter.checkStatus() periodically or twitter.wait().
 
