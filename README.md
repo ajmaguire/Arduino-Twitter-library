@@ -9,11 +9,11 @@ Below is a simple example of how to use this library:
 
 //BEGIN EXAMPLE
 
- char tweet[512]; // the character buffer for your tweet.
- sprintf(tweet, "Hello world!"); // put characters in the buffer.
+ char tweet[512]; // the character buffer for your tweet. \n
+ sprintf(tweet, "Hello world!"); // put characters in the buffer. \n
  
- Twitter twitter("YOUR CODE"); // instantiate a Twitter object.
- twitter.post(tweet);  // post the tweet you wrote above!
+ Twitter twitter("YOUR CODE"); // instantiate a Twitter object. \n
+ twitter.post(tweet);  // post the tweet you wrote above!\n
  
 //END EXAMPLE
 
